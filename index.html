@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>XPERT - Equation Solver</title>
-<link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>XPERT - Equation Solver</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="light-theme">
   <div class="container">
+    <header>
+      <h1>XPERT</h1>
+      <div class="theme-switcher">
+        <button id="theme_toggle1" class="active">Light</button>
+        <button id="theme_toggle2">Dark</button>
+      </div>
+    </header>
 
-    <h1>XPERT</h1>
-
-    <div class="theme-switcher">
-      <button id="theme_toggle1" class="theme-button active">Light Mode</button>
-      <button id="theme_toggle2" class="theme-button">Dark Mode</button>
-    </div>
-
-    <input id="equation_input" type="text" placeholder="Enter your equation here" />
-
-    <button id="solve_button">Solve</button>
-
-    <div id="loading_bar">
-      <div id="loading_fill"></div>
-    </div>
-
-    <p id="result"></p>
-    <p id="error_message" class="error hidden">Invalid Equation!</p>
-
+    <main>
+      <input
+        type="text"
+        id="equationInput"
+        placeholder="Enter your equation"
+        autocomplete="off"
+      />
+      <button id="solve_button">Solve</button>
+      <div id="loading_bar" class="loading-bar">
+        <div id="loading_progress"></div>
+      </div>
+      <div id="error_message" class="error-message"></div>
+      <div id="solution_result" class="solution-result"></div>
+    </main>
   </div>
 
   <script src="script.js"></script>
